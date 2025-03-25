@@ -50,7 +50,7 @@ export default function Home() {
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-normal text-left">
             Dalhousie Film
             <br />
-            Society
+            Society.
           </h1>
         </div>
       </main>

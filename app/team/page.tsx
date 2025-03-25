@@ -86,30 +86,47 @@ const teamMembers = [
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Background image */}
+      <div className="fixed inset-0 z-0">
+        <Image
+          src="/coverPage.jpg?height=1080&width=1920"
+          alt="Film background"
+          fill
+          className="object-cover opacity-60"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+      
+      <div className="relative z-10">
+        <Header />
 
-      <main className="container mx-auto px-4 py-16">
-        <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wider text-center mb-16">
-          Meet the Executive Team
-        </h1>
+        <main className="container mx-auto px-4 py-16">
+          <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wider text-left mb-16 ml-60">
+            Meet the Executive Team.
+          </h1>
+          <div className="max-w-4xl mx-auto h-px bg-white/40 mb-16"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <div className="relative h-64 w-64 rounded-full overflow-hidden mb-6 border-2 border-white/20">
-                <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-              </div>
-              <h2 className="font-serif text-2xl font-light tracking-wider mb-2">{member.name}</h2>
-              <p className="text-lg text-white/80 mb-1">{member.position}</p>
-              <p className="text-sm text-white/60 mb-3">{member.year}</p>
-              <p className="text-md italic">Favorite Film: {member.favoriteFilm}</p>
+          <div className="bg-black/80 p-6 md:p-8 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+              {teamMembers.map((member, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="relative h-64 w-64 rounded-full overflow-hidden mb-6 border-2 border-white/20">
+                    <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  </div>
+                  <h2 className="font-serif text-2xl font-light tracking-wider mb-2">{member.name}</h2>
+                  <p className="text-lg text-white/80 mb-1">{member.position}</p>
+                  <p className="text-sm text-white/60 mb-3">{member.year}</p>
+                  <p className="text-md italic">Favorite Film: {member.favoriteFilm}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </main>
+          </div>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   )
 }

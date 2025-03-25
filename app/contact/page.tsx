@@ -8,7 +8,8 @@ export default function ContactPage() {
       <Header />
 
       <main className="container mx-auto px-4 py-16">
-        <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wider text-center mb-16">Contact Us</h1>
+        <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wider text-left mb-16 ml-64">Contact Us.</h1>
+        <div className="max-w-4xl mx-auto h-px bg-white/40 mb-16"></div>
 
         <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Info */}
