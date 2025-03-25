@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { createContext, useContext, useEffect, useState } from "react"
 
 type Theme = "dark" | "light" | "system"
@@ -34,7 +33,16 @@ export function ThemeProvider({
   enableSystem = true,
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem(storageKey) as Theme) || defaultTheme)
+  // Initialize with defaultTheme, then update in useEffect
+  const [theme, setTheme] = useState<Theme>(defaultTheme)
+  
+  // Only access localStorage after component mounts (client-side only)
+  useEffect(() => {
+    const storedTheme = localStorage.getItem(storageKey) as Theme
+    if (storedTheme) {
+      setTheme(storedTheme)
+    }
+  }, [storageKey])
 
   useEffect(() => {
     const root = window.document.documentElement
@@ -73,4 +81,3 @@ export const useTheme = () => {
 
   return context
 }
-
