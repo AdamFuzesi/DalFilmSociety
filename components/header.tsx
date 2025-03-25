@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -39,7 +39,7 @@ export default function Header() {
             <div className="flex items-center justify-between p-6 md:p-10">
               <Link href="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
                 <div className="relative w-10 h-10 md:w-12 md:h-12">
-                  <Image src="/placeholder.svg?height=100&width=100" alt="DFS Logo" fill className="object-contain" />
+                  <Image src="/dfs-circle-logo.png?height=100&width=100" alt="DFS Logo" fill className="object-contain" />
                 </div>
                 <span className="font-serif text-lg md:text-xl font-light tracking-wider">DFS</span>
               </Link>
@@ -73,6 +73,13 @@ export default function Header() {
                   Meet the Team
                 </Link>
                 <Link
+                  href="/movies"
+                  className="font-serif text-3xl md:text-5xl font-light tracking-wider hover:text-gray-300 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Our Films
+                </Link>
+                <Link
                   href="/events"
                   className="font-serif text-3xl md:text-5xl font-light tracking-wider hover:text-gray-300 transition-colors"
                   onClick={() => setMenuOpen(false)}
@@ -94,4 +101,3 @@ export default function Header() {
     </header>
   )
 }
-

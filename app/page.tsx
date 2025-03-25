@@ -101,6 +101,13 @@ export default function Home() {
                   Meet the Team
                 </Link>
                 <Link
+                  href="/movies"
+                  className="font-serif text-3xl md:text-5xl font-light tracking-wider hover:text-gray-300 transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Our Films
+                </Link>
+                <Link
                   href="/events"
                   className="font-serif text-3xl md:text-5xl font-light tracking-wider hover:text-gray-300 transition-colors"
                   onClick={() => setMenuOpen(false)}

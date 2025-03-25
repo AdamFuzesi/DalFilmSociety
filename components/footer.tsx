@@ -1,9 +1,9 @@
 import Link from "next/link"
-import { Mail, Instagram } from "lucide-react"
+import { Mail, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white border-t border-white/10 py-8">
+    <footer className="bg-black/80 text-white border-t border-white/10 py-8 mt-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
@@ -27,6 +27,11 @@ export default function Footer() {
               <li>
                 <Link href="/team" className="text-white/70 hover:text-white transition-colors">
                   Meet the Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/movies" className="text-white/70 hover:text-white transition-colors">
+                  Our Films
                 </Link>
               </li>
               <li>
@@ -73,4 +78,3 @@ export default function Footer() {
     </footer>
   )
 }
-

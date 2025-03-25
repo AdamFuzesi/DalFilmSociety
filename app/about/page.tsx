@@ -42,7 +42,7 @@ export default function AboutPage() {
             </div>
             <div className="md:w-1/2 relative h-64 md:h-96 w-full rounded-lg overflow-hidden">
               <Image
-                src="/exec.jpeg?height=600&width=800"
+                src="/updateGroup.png?height=600&width=800"
                 alt="Film Society Members"
                 fill
                 className="object-cover"
