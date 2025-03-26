@@ -35,7 +35,7 @@ const movies = [
   },
   {
     id: 4,
-    title: "Names In Red",
+    title: "The Names In Red",
     director: "DFS",
     year: "2024",
     poster: "/mov-namesinred.png?height=600&width=400&text=Movie+4",
